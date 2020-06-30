@@ -1,0 +1,28 @@
+{
+  "name": "fau",
+  "version": "1.0.0",
+  "description": "functional array utils",
+  "main": "build/main/index.js",
+  "typings": "build/main/index.d.ts",
+  "module": "build/module/index.js",
+  "repository": "https://github.com/b-michalkiewicz/fau",
+  "license": "MIT",
+  "keywords": [
+    "functional programming",
+    "typescript",
+    "array",
+    "utils",
+    "functional"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "ts-jest": "^26.1.0",
+    "jest": "^26.0.1",
+    "typescript": "^3.9.5"
+  }
+}
