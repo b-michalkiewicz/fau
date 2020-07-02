@@ -2,9 +2,8 @@
   "name": "fau",
   "version": "1.0.0",
   "description": "functional array utils",
-  "main": "build/main/index.js",
-  "typings": "build/main/index.d.ts",
-  "module": "build/module/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "repository": "https://github.com/b-michalkiewicz/fau",
   "license": "MIT",
   "keywords": [

@@ -4,7 +4,7 @@
 
 export function unzip<T, S>(zs: [T, S][]): [T[], S[]] {
   return zs.reduce(
-    ([xs, ys], [x, y]) => [
+    ([xs, ys]: [T[], S[]], [x, y]) => [
       [...xs, x],
       [...ys, y],
     ],

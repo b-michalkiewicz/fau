@@ -1,16 +1,13 @@
 {
   "compilerOptions": {
+    "target": "es6",
+    "lib": ["es6", "dom"],
     "module": "commonjs",
+    "declaration": true,
+    "outDir": "dist",
+    "strict": true,
     "esModuleInterop": true,
-    "target": "ES2019",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "build",
-    "rootDir": ".",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "strictNullChecks": true
   },
-  "include": ["src/**/*"]
+  "exclude": ["node_modules", "dist", "coverage"]
 }
