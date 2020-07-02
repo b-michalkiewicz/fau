@@ -1,5 +1,5 @@
 /**
- * Partitions the array to a map of arrays according to a differentiate function.
+ * Groups the array to a map of arrays according to a differentiate function.
  */
 
 export function groupBy<T, S>(xs: T[], d: (x: T) => S): Map<S, T[]> {
