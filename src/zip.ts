@@ -3,5 +3,5 @@
  */
 
 export function zip<T, S>(xs: T[], ys: S[]): [T, S][] {
-  return xs.slice(0, Math.min(xs.length, ys.length)).map((x, i) => [x, ys[i]]);
+    return xs.slice(0, Math.min(xs.length, ys.length)).map((x, i) => [x, ys[i]]);
 }

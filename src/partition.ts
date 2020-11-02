@@ -3,5 +3,5 @@
  */
 
 export function partition<T>(zs: T[], p: (x: T) => boolean): [T[], T[]] {
-  return zs.reduce(([xs, ys]: [T[], T[]], x) => (p(x) ? [[...xs, x], ys] : [xs, [...ys, x]]), [[], []]);
+    return zs.reduce(([xs, ys]: [T[], T[]], x) => (p(x) ? [[...xs, x], ys] : [xs, [...ys, x]]), [[], []]);
 }

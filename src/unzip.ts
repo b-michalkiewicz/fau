@@ -3,11 +3,11 @@
  */
 
 export function unzip<T, S>(zs: [T, S][]): [T[], S[]] {
-  return zs.reduce(
-    ([xs, ys]: [T[], S[]], [x, y]) => [
-      [...xs, x],
-      [...ys, y],
-    ],
-    [[], []]
-  );
+    return zs.reduce(
+        ([xs, ys]: [T[], S[]], [x, y]) => [
+            [...xs, x],
+            [...ys, y],
+        ],
+        [[], []],
+    );
 }

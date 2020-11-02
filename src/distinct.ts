@@ -3,5 +3,5 @@
  */
 
 export function distinct<T>(xs: T[], e?: (x: T, y: T) => boolean): T[] {
-  return e ? xs.filter((x, i, acc) => acc.findIndex((y) => e(x, y)) === i) : [...new Set(xs)];
+    return e ? xs.filter((x, i, acc) => acc.findIndex((y) => e(x, y)) === i) : [...new Set(xs)];
 }
