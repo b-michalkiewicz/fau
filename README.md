@@ -19,11 +19,11 @@
 ## distinct
 Returns an array of distinct elements from the given array based on an optional equality predictor.
 ```typescript
-import { zip } from "fau";
+import { distinct } from "fau";
 
-const zipped = zip([1, 2, 3], ["1", "2", "3"]);
+const unique = distinct([1, 1, 2, 2, 3]);
 
-console.log(zipped); // => [ [ 1, '1' ], [ 2, '2' ], [ 3, '3' ] ]
+unique; // => [1, 2, 3]
 ```
 ---
 ## groupBy
@@ -31,21 +31,21 @@ Returns an array of distinct elements from the given array based on an optional 
 ```typescript
 import { groupBy } from "fau";
 
-const dividableBy2 = groupBy([1, 2, 3, 4, 5], (n) => n % 2 === 0);
+const divisibleBy2 = groupBy([1, 2, 3, 4, 5], (n) => n % 2 === 0);
 
-console.log(dividableBy2); // => Map { false => [ 1, 3, 5 ], true => [ 2, 4 ] }
+divisibleBy2; // => Map { false => [ 1, 3, 5 ], true => [ 2, 4 ] }
 
 const groupedByProperty = groupBy(
-  [
-    { key: 1, value: 1 },
-    { key: 1, value: 2 },
-    { key: 2, value: 22 },
-    { key: 3, value: 3 },
-  ],
-  (o) => o.key
+    [
+        { key: 1, value: 1 },
+        { key: 1, value: 2 },
+        { key: 2, value: 22 },
+        { key: 3, value: 3 },
+    ],
+    (o) => o.key,
 );
 
-console.log(groupedByProperty); /* =>
+groupedByProperty; /* =>
 Map {
   1 => [ { key: 1, value: 1 }, { key: 1, value: 2 } ],
   2 => [ { key: 2, value: 22 } ],
@@ -61,11 +61,11 @@ import { partition } from "fau";
 
 const greaterThan2 = partition([1, 2, 3, 4, 5], (n) => n > 2);
 
-console.log(greaterThan2); // => [ [ 3, 4, 5 ], [ 1, 2 ] ]
+greaterThan2; // => [ [ 3, 4, 5 ], [ 1, 2 ] ]
 
 const partitionedByProperty = partition([{ foo: 1 }, { bar: 2 }, { foo: 3 }, { bar: 4 }, { foo: 5 }], (o) => !!o.foo);
 
-console.log(partitionedByProperty); // => [ [ { foo: 1 }, { foo: 3 }, { foo: 5 } ], [ { bar: 2 }, { bar: 4 } ] ]
+partitionedByProperty; // => [ [ { foo: 1 }, { foo: 3 }, { foo: 5 } ], [ { bar: 2 }, { bar: 4 } ] ]
 ```
 ---
 ## sameElements
@@ -73,11 +73,11 @@ Checks if two arrays have the same elements based on optional predicate function
 ```typescript
 import { sameElements } from "fau";
 
-console.log(sameElements([1, 2, 3], [1, 2, 3])); // => true
+sameElements([1, 2, 3], [1, 2, 3]); // => true
 
-console.log(sameElements([{ id: 1 }, { id: 2 }], [{ id: 1 }, { id: 2 }])); // => false
+sameElements([{ id: 1 }, { id: 2 }], [{ id: 1 }, { id: 2 }]); // => false
 
-console.log(sameElements([{ id: 1 }, { id: 2 }], [{ id: 1 }, { id: 2 }], (a, b) => a.id === b.id)); // => true
+sameElements([{ id: 1 }, { id: 2 }], [{ id: 1 }, { id: 2 }], (a, b) => a.id === b.id); // => true
 ```
 ---
 ## unzip
@@ -86,12 +86,12 @@ Converts given array of tuples into tuple of two arrays.
 import { unzip } from "fau";
 
 const unzipped = unzip([
-  [1, "1"],
-  [2, "2"],
-  [3, "3"],
+    [1, "1"],
+    [2, "2"],
+    [3, "3"],
 ]);
 
-console.log(unzipped); // => [ [ 1, 2, 3 ], [ '1', '2', '3' ] ]
+unzipped; // => [ [ 1, 2, 3 ], [ '1', '2', '3' ] ]
 ```
 ---
 ## zip
@@ -101,5 +101,5 @@ import { zip } from "fau";
 
 const zipped = zip([1, 2, 3], ["1", "2", "3"]);
 
-console.log(zipped); // => [ [ 1, '1' ], [ 2, '2' ], [ 3, '3' ] ]
+zipped; // => [ [ 1, '1' ], [ 2, '2' ], [ 3, '3' ] ]
 ```
