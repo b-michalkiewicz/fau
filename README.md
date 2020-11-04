@@ -11,6 +11,7 @@
 - [distinct](#distinct)
 - [groupBy](#groupBy)
 - [partition](#partition)
+- [sameElements](#sameElements)
 - [unzip](#unzip)
 - [zip](#zip)
 
@@ -65,6 +66,18 @@ console.log(greaterThan2); // => [ [ 3, 4, 5 ], [ 1, 2 ] ]
 const partitionedByProperty = partition([{ foo: 1 }, { bar: 2 }, { foo: 3 }, { bar: 4 }, { foo: 5 }], (o) => !!o.foo);
 
 console.log(partitionedByProperty); // => [ [ { foo: 1 }, { foo: 3 }, { foo: 5 } ], [ { bar: 2 }, { bar: 4 } ] ]
+```
+---
+## sameElements
+Checks if two arrays have the same elements based on optional predicate function (if not provided === equality is used).
+```typescript
+import { sameElements } from "fau";
+
+console.log(sameElements([1, 2, 3], [1, 2, 3])); // => true
+
+console.log(sameElements([{ id: 1 }, { id: 2 }], [{ id: 1 }, { id: 2 }])); // => false
+
+console.log(sameElements([{ id: 1 }, { id: 2 }], [{ id: 1 }, { id: 2 }], (a, b) => a.id === b.id)); // => true
 ```
 ---
 ## unzip
